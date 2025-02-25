@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Dream Vacation</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: url('./assets/images/beach.png') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Overlay Effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(255,255,255,0.1));
+            z-index: -1;
+        }
+
+        /* Form Container - Glassmorphism */
+        .form-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 420px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 30px;
+        }
+
+        .form-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Heading Style */
+        h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Input Fields */
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: none;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 12px rgba(0, 183, 255, 0.9);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Submit Button */
+        .btn-primary {
+            background: linear-gradient(45deg, #007BFF, #00D4FF);
+            border: none;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #0056b3, #00a1ff);
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .form-container {
+                width: 100%;
+                padding: 30px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Reserve Your Trip</h2>
+        <form action="submit.php" method="POST">
+            <input type="hidden" name="form_type" value="booking_form_2">
+
+            <div class="mb-3">
+                <label for="fullName" class="form-label text-white">Full Name</label>
+                <input type="text" class="form-control" name="fullName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="emailAddress" class="form-label text-white">Email Address</label>
+                <input type="email" class="form-control" name="emailAddress" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="contactNumber" class="form-label text-white">Contact Number</label>
+                <input type="text" class="form-control" name="contactNumber" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="tripDestination" class="form-label text-white">Destination</label>
+                <input type="text" class="form-control" name="tripDestination" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="travelDate" class="form-label text-white">Travel Date</label>
+                <input type="date" class="form-control" name="travelDate" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Confirm Booking</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

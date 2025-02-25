@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('./assets/images/beach.png') no-repeat center center/cover; /* Ocean to sky blue gradient */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .thank-you-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color:linear-gradient(to bottom, #0077B6, #00B4D8);;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            background: #0288D1; /* Deep sky blue */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #01579B; /* Darker blue */
+        }
+    </style>
+    <script>
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 10000);
+    </script>
+</head>
+<body>
+    <div class="thank-you-box">
+        <h1>Thank You!</h1>
+        <p>Your vacation booking request has been received. We will contact you soon.</p>
+        <p>Redirecting to the home page in 10 seconds...</p>
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+</body>
+</html>
